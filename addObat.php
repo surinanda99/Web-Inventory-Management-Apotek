@@ -9,7 +9,7 @@
     <body> 
         <div class="topnav"> 
             <b><a href="home.php">Home</a></b> 
-            <b><a href="dataUSer.php">User</a></b>
+            <b><a href="#">User</a></b>
             <b><a href="dataObat.php">Obat</a></b>
             <b><a href="dataTrans.php">Transaksi</a></b> 
             <b><a href="logout.php">Logout</a></b>  
