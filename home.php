@@ -8,17 +8,17 @@
     </head> 
     <body>
         <div class="topnav"> <b><a href="#">Home</a></b> 
-        <b><a href="login1.php">Login</a></b> 
+        <b><a href="login.php">Login</a></b> 
         <b><a href="logout.php">Logout</a></b></div> 
         <br><br><br><br><br> <div class="kotak1"> 
             <center> 
-                <a href="halaman1.php">Edit barang</a> 
+                <a href="dataObat.php">Edit Obat</a> 
             </center> 
         </div> 
         <br><br> 
         <div class="kotak2"> 
             <center> 
-                <a href="user.php">Edit user</a> 
+                <a href="dataUser.php">Edit user</a> 
             </center> 
         </div> 
     </body> 

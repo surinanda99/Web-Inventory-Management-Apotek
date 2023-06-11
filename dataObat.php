@@ -15,9 +15,9 @@
         </div> 
         <center> 
         <div class="panjang"> 
-            <h3 align="left" style="margin-bottom:30px">Daftar Barang</h3>
+            <h3 align="left" style="margin-bottom:30px">Daftar Obat</h3>
             <?php include "konekObat.php"; 
-             $sql = "SELECT * from barang ORDER BY id"; 
+             $sql = "SELECT * from obat ORDER BY id"; 
              $hasil = $conn->query($sql); 
              
                 if ($hasil->num_rows>0) { 
