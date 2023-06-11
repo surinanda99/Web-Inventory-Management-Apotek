@@ -11,7 +11,8 @@
             <b><a href="#">Home</a></b> 
             <b><a href="dataUser.php">User</a></b>
             <b><a href="dataObat.php">Obat</a></b>
-            <b><a href="dataTrans.php">Transaksi</a></b> 
+            <b><a href="dataTrans.php">Transaksi</a></b>
+            <b><a href="laporan.php">Laporan</a></b>  
             <b><a href="logout.php">Logout</a></b>
         </div> 
         <br><br><br><br><br> <div class="kotak1"> 
