@@ -2,12 +2,13 @@
     include "koneksi.php"; 
     include "upFotoObat.php"; 
         $id=$_POST['tid']; 
-        $nama=$_POST['tnama']; 
-        $hrg=$_POST['thrg']; 
-        $jml=$_POST['tjml']; 
+        $namaObat=$_POST['tnama']; 
+        $harga=$_POST['thrg'];
+        $expired=$_POST['dexp'];
+        $stok=$_POST['tjml']; 
     if(upload_foto($_FILES["foto"])){ 
         $foto=$_FILES["foto"]["name"]; 
-        $sql = "INSERT INTO obat (id,nama,hrg,jml,foto) VALUES ('$id','$nama','$hrg','$jml', '$foto')"; 
+        $sql = "INSERT INTO obat (id, namaObat, harga, expired, stok, foto) VALUES ('$id','$namaObat','$harga','$expired','$stok', '$foto')"; 
         if($conn->query($sql) === TRUE){ 
             $conn->close(); header("location:dataObat.php"); 
         }else{ 

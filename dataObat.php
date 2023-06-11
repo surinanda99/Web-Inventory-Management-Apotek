@@ -26,20 +26,22 @@
                     echo "<table class='table table-dark table-hover cols-6 rows-6'> 
                         <tr> 
                             <th>ID</th> 
-                            <th>Nama</th> 
-                            <th>harga</th> 
-                            <th>Jumlah</th> 
+                            <th>Nama</th>
                             <th>Foto</th> 
+                            <th>Expired</th>  
+                            <th>Harga</th> 
+                            <th>Stok</th> 
                             <th>Edit</th> 
                             <th>Hapus</th> 
                         </tr>"; 
                     while ($row=$hasil->fetch_assoc()){
                         $teks="<tr>"; 
                         $teks.="<td>".$row["id"]."</td>"; 
-                        $teks.="<td>".$row["nama"]."</td>"; 
-                        $teks.="<td>".$row["hrg"]."</td>"; 
-                        $teks.="<td>".$row["jml"]."</td>"; 
+                        $teks.="<td>".$row["namaObat"]."</td>"; 
                         $teks.="<td><img src='img1/".$row["foto"]."' style='width: 100px; height: 100px;'></img></td>"; 
+                        $teks.="<td>".$row["expired"]."</td>"; 
+                        $teks.="<td>".$row["harga"]."</td>"; 
+                        $teks.="<td>".$row["stock"]."</td>"; 
                         $teks.="<td><a href='editBrg.php?id=".$row["id"]."'>Edit</a></td>"; 
                         $teks.="<td><a href='delBrg.php?id=".$row["id"]."'>Hapus</a></td>"; 
                         $teks.="</tr>"; 

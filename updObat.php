@@ -1,20 +1,21 @@
 <?php 
     include "koneksi.php"; 
     include "upFotoObat.php"; 
-    $id=$_POST['tid'];
-    $nama=$_POST['tnama']; 
-    $hrg=$_POST['thrg']; 
+    $id=$_POST['tid']; 
+    $namaObat=$_POST['tnama']; 
+    $harga=$_POST['thrg']; 
     $ket=$_POST['tket'];
-    $jml=$_POST['tjml']; 
+    $expired=$_POST['dexp'];
+    $stok=$_POST['tjml'];     
     $foto_lama=$_POST['foto_lama']; 
     $qry=true; 
     $flagphoto=true; 
     if(isset($_POST['ubah_foto'])){ 
         if(upload_foto($_FILES['foto'])){ 
             $foto=$_FILES['foto']['name']; 
-            $sql = "UPDATE obat SET nama='$nama', 
-                                    hrg='$hrg', 
-                                    jml='$jml', 
+            $sql = "UPDATE obat SET namaObat='$namaObat', 
+                                    harga='$harga', 
+                                    stok='$stok', 
                                     keterangan='$ket', 
                                     foto='$foto' WHERE id='$id'"; 
         }else{ 
@@ -22,9 +23,9 @@
             echo "foto gagal di upload"; 
         } 
     }else{ 
-        $sql = "UPDATE obat SET nama='$nama', 
-                                hrg='$hrg', 
-                                jml='$jml', 
+        $sql = "UPDATE obat SET namaObat='$namaObat', 
+                                harga='$harga', 
+                                stok='$stok', 
                                 keterangan='$ket' WHERE id='$id'"; 
         $flagphoto=false; 
     } 
