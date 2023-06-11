@@ -46,12 +46,12 @@
                 //mengecek password sesuai atau tidak 
                 if(password_verify($password, $data2['password'])){ 
                     //cek jika user login sebagai Admin 
-                    if($data['jabatan']=="admin"|"Admin"){ 
+                    if($data['jabatan']=="admin"||"Admin"){ 
                         header("location:home.php"); 
-                    }else if ($data['jabatan']=="karyawan"|"Karyawan"){ 
+                    }else if ($data['jabatan']=="karyawan"||"Karyawan"){ 
                         header("location:home.php"); 
-                    }else if ($data['jabatan']=="owner"|"Owner"){ 
-                        echo "your password invalid"; 
+                    }else if ($data['jabatan']=="owner"||"Owner"){ 
+                        header("location:home.php"); 
                     }else{ 
                         echo "your password invalid"; 
                     } 
