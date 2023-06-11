@@ -2,16 +2,16 @@
     echo "<br><br><br>"; 
     include 'koneksi.php'; 
     if(isset($_POST['sub'])){ 
-        $name = htmlspecialchars($_POST['nama']); 
-        $username = htmlspecialchars($_POST['unama']); 
+        $nama = htmlspecialchars($_POST['nama']); 
+        $username = htmlspecialchars($_POST['username']); 
         $email = htmlspecialchars($_POST['email']);
         $alamat = htmlspecialchars($_POST['alamat']);  
         $telepon = htmlspecialchars($_POST['telepon']); 
         $password = htmlspecialchars($_POST['password']); 
         $encryptedpassword = password_hash($password, PASSWORD_DEFAULT); 
-        $login_status = htmlspecialchars($_POST['jabatan']); 
+        $jabatan = htmlspecialchars($_POST['jabatan']); 
         $queryinsert = mysqli_query($conn, "INSERT INTO user (nama, alamat, email, telepon, username, password, jabatan) 
-                                            VALUES ('$name', '$alamat', '$email', '$telepon', '$username', '$encryptedpassword', '$login_status')"); 
+                                            VALUES ('$nama', '$alamat', '$email', '$telepon', '$username', '$encryptedpassword', '$jabatan')"); 
         $sql=mysqli_query($conn, $queryinsert); 
         if($sql){
             header("location:user.php"); 
@@ -38,8 +38,8 @@
                     <b>Input user</b>
                 </h2>form action="" method="POST"> 
                 <div> 
-                    <label for="unama">Username: </label><br> 
-                    <input type="text" name="unama"><br> 
+                    <label for="username">Username: </label><br> 
+                    <input type="text" name="username"><br> 
                 </div>
                 <div> 
                     <label for="password">Password:</label><br> 

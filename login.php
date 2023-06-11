@@ -1,5 +1,5 @@
 <?php 
-    include "konekLogin.php"; 
+    include "koneksi.php"; 
     session_start(); 
 ?> 
 <!DOCTYPE html> 
@@ -22,8 +22,8 @@
             <input type="password" name="password"><br> 
         </div> 
         <div> 
-            <label for="peran">Login Sebagai: </label><br> 
-            <input type="text" name="peran" id="peran"> 
+            <label for="jabatan">Jabatan: </label><br> 
+            <input type="text" name="jabatan" id="jabatan"> 
         </div> 
         <div> 
             <input type="submit" name="login" value="Login" class="tombol"> 
@@ -34,10 +34,10 @@
         if(isset($_POST['login'])){ 
             $username = htmlspecialchars($_POST['username']); 
             $password = htmlspecialchars($_POST['password']); 
-            $login_status = $_POST['peran']; 
+            $jabatan = $_POST['jabatan']; 
             
             $alldata = mysqli_query($conn, "SELECT * FROM user"); 
-            $query = mysqli_query($conn, "SELECT username, peran from user WHERE username='$username' AND peran='$login_status'"); 
+            $query = mysqli_query($conn, "SELECT username, jabatan from user WHERE username='$username' AND jabatan='$jabatan'"); 
             $count = mysqli_num_rows($query);
             if($count > 0){ 
                 //jika username ditemukan dan ada di database 
@@ -46,7 +46,7 @@
                 //mengecek password sesuai atau tidak 
                 if(password_verify($password, $data2['password'])){ 
                     //cek jika user login sebagai Admin 
-                    if($data['peran']=="User"){ 
+                    if($data['jabatan']=="User"){ 
                         header("location:home.php"); 
                     }else{ 
                         echo "your password invalid"; 

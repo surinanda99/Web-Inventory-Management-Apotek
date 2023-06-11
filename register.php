@@ -17,7 +17,15 @@
     <div class="data"> 
         <form action="" method="POST"> 
             <div> 
-                <label for="nama">Nama Lengkap: </label><br> 
+                <label for="username">Username: </label><br> 
+                <input type="text" name="username"><br>
+            </div>
+            <div> 
+                <label for="password">Password:</label><br> 
+                <input type="password" name="password"><br> 
+            </div>    
+            <div> 
+                <label for="nama">Nama: </label><br> 
                 <input type="text" name="nama"><br>
             </div>
             <div> 
@@ -25,39 +33,31 @@
                 <input type="text" name="alamat"><br> 
             </div>
             <div> 
+                <label for="jabatan">Jabatan: </label><br> 
+                <input type="text" name="jabatan" id="jabatan"> 
+            </div>
+            <div> 
                 <label for="email">Email: </label><br> 
                 <input type="email" name="email"><br> 
             </div> 
             <div> 
-                <label for="telepon">Telepon: </label><br> 
+                <label for="telepon">No HP: </label><br> 
                 <input type="text" name="telepon"><br> 
-            </div> 
-            <div> 
-                <label for="username">Username: </label><br> 
-                <input type="text" name="username"><br>
-            </div>
-            <div> 
-                <label for="password">Password:</label><br> 
-                <input type="password" name="password"><br> 
-            </div> 
-            <div> 
-                <label for="jabatan">Jabatan: </label><br> 
-                <input type="text" name="jabatan" id="jabatan"> 
-            </div> 
+            </div>  
             <div> 
                 <input type="submit" name="register" value="Register" class="tombol"> 
             </div> 
         </form> 
         <?php 
             if(isset($_POST['register'])){ 
-                $name = htmlspecialchars($_POST['nama']);
+                $nama = htmlspecialchars($_POST['nama']);
                 $alamat = htmlspecialchars($_POST['alamat']);  
                 $email = htmlspecialchars($_POST['email']); 
                 $telepon = htmlspecialchars($_POST['telepon']); 
                 $username = htmlspecialchars($_POST['username']);
                 $password = htmlspecialchars($_POST['password']); 
                 $encryptedpassword = password_hash($password, PASSWORD_DEFAULT);
-                $login_status = htmlspecialchars($_POST['jabatan']); 
+                $jabatan = htmlspecialchars($_POST['jabatan']); 
                 
                 //mengecek ada username yang sama atau tidak 
                 $query = mysqli_query($conn, "SELECT username from user WHERE username='$username'"); 
@@ -67,7 +67,7 @@
                     echo "Tidak bisa melakukan registrasi karena username ini sudah terdaftar, silahkan <a href=login1.php>Login</a>"; 
                 }else{
                     $queryinsert = mysqli_query($conn, "INSERT INTO user (nama, alamat, email, telepon, username, password, jabatan) 
-                    VALUES ('$name', '$alamat', '$email', '$telepon', '$username', '$encryptedpassword', '$login_status')"); 
+                    VALUES ('$nama', '$alamat', '$email', '$telepon', '$username', '$encryptedpassword', '$jabatan')"); 
                     if($queryinsert){ 
                         echo "Anda Sudah Register, Silahkan <a href=login1.php>Login</a>"; 
                     } 
