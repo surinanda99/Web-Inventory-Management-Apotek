@@ -14,7 +14,7 @@
     <body>
         <div class="topnav"> 
             <b><a href="home.php">Home</a></b> 
-            <b><a href="login1.php">Login</a></b> 
+            <b><a href="login.php">Login</a></b> 
             <b><a href="logout.php">Logout</a></b> 
         </div> 
         <?php 

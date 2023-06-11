@@ -1,5 +1,5 @@
 <?php 
-    include "konekObat.php"; 
+    include "koneksi.php"; 
     include "upFotoObat.php"; 
         $id=$_POST['tid']; 
         $nama=$_POST['tnama']; 

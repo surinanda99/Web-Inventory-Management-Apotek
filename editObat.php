@@ -1,5 +1,5 @@
 <?php 
-    include "konekObat.php"; 
+    include "koneksi.php"; 
     $id=$_GET['id']; 
     $sql="SELECT * FROM obat WHERE id='$id'"; 
     $hasil=$conn->query($sql); 
@@ -19,7 +19,7 @@
     <body> 
         <div class="topnav"> 
             <b><a href="home.php">Home</a></b> 
-            <b><a href="login1.php">Login</a></b> 
+            <b><a href="login.php">Login</a></b> 
             <b><a href="logout.php">Logout</a></b> 
         </div> 
         <center> 

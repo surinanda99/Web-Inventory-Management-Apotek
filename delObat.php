@@ -1,5 +1,5 @@
 <?php 
-include "konekObat.php"; 
+include "koneksi.php"; 
 $id=$_GET['id']; 
 $sql = "SELECT foto FROM obat WHERE id='$id'"; 
 $hasil = $conn->query($sql); 

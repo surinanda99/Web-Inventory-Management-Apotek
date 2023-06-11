@@ -17,7 +17,7 @@
             <div class="panjang"> 
                 <h3 align="left" style="margin-bottom:30px">Daftar User</h3> 
                 <?php 
-                    include "konekLogin.php"; 
+                    include "koneksi.php"; 
                     $sql = "SELECT * from user ORDER BY id"; 
                     $hasil = $conn->query($sql); 
                     if ($hasil->num_rows>0) { 
