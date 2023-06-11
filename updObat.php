@@ -32,10 +32,10 @@
             if(is_file("img/".$foto_lama) && ($flagphoto==TRUE)){ 
                 //jika jambar ada 
                 unlink("img/".$foto_lama); 
-                $conn->close(); header("location:Halaman1.php"); 
+                $conn->close(); header("location:dataObat.php"); 
             }else{ 
                 $conn->close(); 
-                header("location:Halaman1.php"); 
+                header("location:dataObat.php"); 
             } 
         } 
     } 

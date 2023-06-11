@@ -35,9 +35,9 @@ include 'koneksi.php';
                                 WHERE id='$kode'";
         $sql=mysqli_query($conn, $query); 
         if($sql){ 
-            header("location:user.php"); 
+            header("location:dataUser.php"); 
             }else{
-                header("location:user.php"); 
+                header("location:dataUser.php"); 
                 } 
     } 
 ?> 

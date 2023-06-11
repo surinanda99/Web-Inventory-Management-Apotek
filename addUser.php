@@ -10,12 +10,12 @@
         $password = htmlspecialchars($_POST['password']); 
         $encryptedpassword = password_hash($password, PASSWORD_DEFAULT); 
         $jabatan = htmlspecialchars($_POST['jabatan']); 
-        $queryinsert = mysqli_query($conn, "INSERT INTO user (nama, alamat, email, telepon, username, password, jabatan) VALUES ('$nama', '$alamat', '$email', '$telepon', '$username', '$encryptedpassword', '$jabatan')"); 
+        $queryinsert = "INSERT INTO user (nama, alamat, email, telepon, username, password, jabatan) VALUES ('$nama', '$alamat', '$email', '$telepon', '$username', '$encryptedpassword', '$jabatan')"; 
         $sql=mysqli_query($conn, $queryinsert); 
         if($sql){
-            header("location:user.php"); 
+            header("location:dataUser.php"); 
         }else{ 
-            header("location:user.php"); 
+            header("location:dataUser.php"); 
         } 
     } 
 ?> 
