@@ -28,7 +28,7 @@
             }else{ 
                 echo "<h2><font color=red>Data gagal dihapus</font></h2>"; 
             }
-            echo "Klik <a href='user.php'>disini</a> untuk kembali ke halaman display user";
+            echo "Klik <a href='dataUser.php'>disini</a> untuk kembali ke halaman display user";
         }else{
             die ("Access Denied"); 
         } ?> 
