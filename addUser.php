@@ -1,6 +1,6 @@
 <?php 
     echo "<br><br><br>"; 
-    include 'konekLogin.php'; 
+    include 'koneksi.php'; 
     if(isset($_POST['sub'])){ 
         $username = htmlspecialchars($_POST['nama']); 
         $email = htmlspecialchars($_POST['email']); 

@@ -16,7 +16,7 @@
         <center> 
         <div class="panjang"> 
             <h3 align="left" style="margin-bottom:30px">Daftar Obat</h3>
-            <?php include "konekObat.php"; 
+            <?php include "koneksi.php"; 
              $sql = "SELECT * from obat ORDER BY id"; 
              $hasil = $conn->query($sql); 
              
