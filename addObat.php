@@ -9,13 +9,15 @@
     <body> 
         <div class="topnav"> 
             <b><a href="home.php">Home</a></b> 
-            <b><a href="login.php">Login</a></b>
-            <b><a href="logout.php">Logout</a></b> 
+            <b><a href="dataUSer.php">User</a></b>
+            <b><a href="dataObat.php">Obat</a></b>
+            <b><a href="dataTrans.php">Transaksi</a></b> 
+            <b><a href="logout.php">Logout</a></b>  
         </div> 
         <center> 
             <div class="panjang"> 
                 <h1 align="left" style="margin-bottom:30px">Input data barang</h1> 
-                <form action="insBrg.php" method='post' enctype="multipart/form-data"> 
+                <form action="insObat.php" method='post' enctype="multipart/form-data"> 
                     <table class="table table-dark table-hover cols-6 rows-6"> 
                         <tr> 
                             <td>Id</td> 
@@ -23,9 +25,19 @@
                             <td><input type="text" name="tid" id="tid"></td> 
                         </tr> 
                         <tr> 
-                            <td>Nama Barang</td> 
+                            <td>Nama Obat</td> 
                             <td>:</td> 
                             <td><input type="text" name="tnama" id="tnama"></td> 
+                        </tr>
+                        <tr> 
+                            <td>Foto</td> 
+                            <td>:</td> 
+                            <td><input type="file" name="foto" id="foto"></td> 
+                        </tr>
+                        <tr> 
+                            <td>Expired</td> 
+                            <td>:</td> 
+                            <td><input type="date" name="dexp" id="dexp"></td> 
                         </tr> 
                         <tr> 
                             <td>Harga</td> 
@@ -36,11 +48,6 @@
                             <td>Jumlah Stok</td> 
                             <td>:</td> 
                             <td><input type="text" name="tjml" id="tjml"></td> 
-                        </tr> 
-                        <tr> 
-                            <td>Foto</td> 
-                            <td>:</td> 
-                            <td><input type="file" name="foto" id="foto"></td> 
                         </tr> 
                     </table> 
                     <input type="submit" name="simpan" id="simpan" value="simpan"> 

@@ -19,7 +19,9 @@
     <body> 
         <div class="topnav"> 
             <b><a href="home.php">Home</a></b> 
-            <b><a href="login.php">Login</a></b> 
+            <b><a href="dataUSer.php">User</a></b>
+            <b><a href="dataObat.php">Obat</a></b>
+            <b><a href="dataTrans.php">Transaksi</a></b> 
             <b><a href="logout.php">Logout</a></b> 
         </div> 
         <center> 
@@ -34,23 +36,11 @@
                             <td></td> 
                         </tr> 
                         <tr> 
-                            <td>Nama Barang</td> 
+                            <td>Nama Obat</td> 
                             <td>:</td> 
-                            <td><input type="text" name="tnama" id="tnama" value="<?= $nama; ?>"></td> 
+                            <td><input type="text" name="tnama" id="tnama" value="<?= $namaObat; ?>"></td> 
                             <td></td> 
-                        </tr> 
-                        <tr> 
-                            <td>Harga</td> 
-                            <td>:</td> 
-                            <td><input type="text" name="thrg" id="thrg" value="<?= $hrg; ?>"></td> 
-                            <td></td> 
-                        </tr> 
-                        <tr> 
-                            <td>Jumlah Stok</td> 
-                            <td>:</td>
-                            <td><input type="text" name="tjml" id="tjml" value="<?= $jml; ?>"></td> 
-                            <td></td> 
-                        </tr> 
+                        </tr>
                         <tr> 
                             <td>Foto</td> 
                             <td>:</td> 
@@ -62,7 +52,26 @@
                             <td></td> 
                             <td><input type="checkbox" name="ubah_foto" id="ubah_foto" value="true">Ceklis Jika ingin mengubah foto</td> 
                             <td></td> 
+                        </tr>
+                        <tr> 
+                            <td>Expired</td> 
+                            <td>:</td> 
+                            <td><input type="date" name="dexp" id="dexp" value="<?= $expired; ?>"></td> 
+                            <td></td> 
                         </tr> 
+                        <tr> 
+                            <td>Harga</td> 
+                            <td>:</td> 
+                            <td><input type="text" name="thrg" id="thrg" value="<?= $harga; ?>"></td> 
+                            <td></td> 
+                        </tr> 
+                        <tr> 
+                            <td>Jumlah Stok</td> 
+                            <td>:</td>
+                            <td><input type="text" name="tjml" id="tjml" value="<?= $stok; ?>"></td> 
+                            <td></td> 
+                        </tr> 
+                         
                     </table> 
                     <input type="submit" value="update"> 
                 </form> 

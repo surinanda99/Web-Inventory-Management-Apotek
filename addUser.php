@@ -2,14 +2,16 @@
     echo "<br><br><br>"; 
     include 'koneksi.php'; 
     if(isset($_POST['sub'])){ 
-        $username = htmlspecialchars($_POST['nama']); 
-        $email = htmlspecialchars($_POST['email']); 
+        $name = htmlspecialchars($_POST['nama']); 
+        $username = htmlspecialchars($_POST['unama']); 
+        $email = htmlspecialchars($_POST['email']);
+        $alamat = htmlspecialchars($_POST['alamat']);  
         $telepon = htmlspecialchars($_POST['telepon']); 
         $password = htmlspecialchars($_POST['password']); 
         $encryptedpassword = password_hash($password, PASSWORD_DEFAULT); 
-        $login_status = htmlspecialchars($_POST['peran']); 
-        $queryinsert = mysqli_query($conn, "INSERT INTO user (nama_user, email, telepon, password, peran) 
-                                            VALUES ('$username', '$email', '$telepon', '$encryptedpassword', '$login_status')"); 
+        $login_status = htmlspecialchars($_POST['jabatan']); 
+        $queryinsert = mysqli_query($conn, "INSERT INTO user (nama, alamat, email, telepon, username, password, jabatan) 
+                                            VALUES ('$name', '$alamat', '$email', '$telepon', '$username', '$encryptedpassword', '$login_status')"); 
         $sql=mysqli_query($conn, $queryinsert); 
         if($sql){
             header("location:user.php"); 
@@ -20,12 +22,14 @@
 ?> 
 <html> 
     <head>
-        <title>Tambah Barang</title> 
+        <title>Tambah User</title> 
     </head>
     <body>
         <div class="topnav"> 
             <b><a href="home.php">Home</a></b> 
-            <b><a href="login1.php">Login</a></b> 
+            <b><a href="dataUSer.php">User</a></b>
+            <b><a href="dataObat.php">Obat</a></b>
+            <b><a href="dataTrans.php">Transaksi</a></b> 
             <b><a href="logout.php">Logout</a></b> 
         </div> 
         <center> 
@@ -34,25 +38,34 @@
                     <b>Input user</b>
                 </h2>form action="" method="POST"> 
                 <div> 
-                    <label for="nama">Username: </label><br> 
-                    <input type="text" name="nama"><br> 
-                </div> 
-                <div> 
-                    <label for="email">Email: </label><br> 
-                    <input type="email" name="email"><br> 
-                </div> 
-                <div> 
-                    <label for="telepon">Telepon: </label><br> 
-                    <input type="text" name="telepon"><br> 
-                </div> 
+                    <label for="unama">Username: </label><br> 
+                    <input type="text" name="unama"><br> 
+                </div>
                 <div> 
                     <label for="password">Password:</label><br> 
                     <input type="password" name="password"><br> 
                 </div> 
                 <div> 
-                    <label for="Peran">Input: </label><br> 
-                    <input type="text" name="peran" id="peran"> 
-                </div> 
+                    <label for="nama">Nama: </label><br> 
+                    <input type="text" name="nama"><br> 
+                </div>
+                <div> 
+                    <label for="alamat">Alamat: </label><br> 
+                    <input type="text" name="alamat"><br> 
+                </div>
+                <div> 
+                    <label for="jabatan">Jabatan: </label><br> 
+                    <input type="text" name="jabatan" id="jabatan"> 
+                </div>  
+                <div> 
+                    <label for="email">Email: </label><br> 
+                    <input type="email" name="email"><br> 
+                </div>
+                
+                <div> 
+                    <label for="telepon">No hp: </label><br> 
+                    <input type="text" name="telepon"><br> 
+                </div>  
                 <div> 
                     <input type="submit" name="sub" value="Register" class="tombol"> 
                 </div> 

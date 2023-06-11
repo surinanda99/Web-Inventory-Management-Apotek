@@ -4,13 +4,14 @@
         <meta charset="UTF-8"> 
         <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Document</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+        <title>Data User</title>
     </head> 
     <body>
         <div class="topnav"> 
             <b><a href="home.php">Home</a></b> 
-            <b><a href="login.php">Login</a></b> 
+            <b><a href="#">User</a></b>
+            <b><a href="dataObat.php">Obat</a></b>
+            <b><a href="dataTrans.php">Transaksi</a></b> 
             <b><a href="logout.php">Logout</a></b> 
         </div> 
         <center> 
@@ -24,22 +25,26 @@
                         echo "<table class='table table-dark table-hover cols-6 rows-6'> 
                             <tr> 
                                 <th>ID</th> 
-                                <th>Nama</th> 
-                                <th>email</th> 
-                                <th>telepon</th> 
+                                <th>Nama</th>
+                                <th>Username</th>  
+                                <th>Email</th> 
+                                <th>No Hp</th> 
                                 <th>password</th> 
-                                <th>Peran</th> 
+                                <th>jabatan</th>
+                                <th>Alamat</th>  
                                 <th>Edit</th> 
                                 <th>Hapus</th> 
                             </tr>"; 
                     while ($row=$hasil->fetch_assoc()){ 
                         $teks="<tr>"; 
                         $teks.="<td>".$row["Id"]."</td>"; 
-                        $teks.="<td>".$row["nama_user"]."</td>"; 
-                        $teks.="<td>".$row["email"]."</td>"; 
+                        $teks.="<td>".$row["nama"]."</td>";
+                        $teks.="<td>".$row["unama"]."</td>";  
+                        $teks.="<td>".$row["email"]."</td>";
                         $teks.="<td>".$row["telepon"]."</td>"; 
                         $teks.="<td>".$row["password"]."</td>"; 
-                        $teks.="<td>".$row["peran"]."</td>"; 
+                        $teks.="<td>".$row["jabatan"]."</td>";
+                        $teks.="<td>".$row["alamat"]."</td>";  
                         $teks.="<td><a href='editUser.php?id=".$row["Id"]."'>Edit</a></td>"; 
                         $teks.="<td><a href='delUser.php?id=".$row["Id"]."'>Hapus</a></td>"; 
                         $teks.="</tr>"; 
