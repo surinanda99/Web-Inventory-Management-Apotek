@@ -46,7 +46,7 @@
                 //mengecek password sesuai atau tidak 
                 if(password_verify($password, $data2['password'])){ 
                     //cek jika user login sebagai Admin 
-                    if($data['jabatan']=="User"){ 
+                    if($data['jabatan']=="admin"){ 
                         header("location:home.php"); 
                     }else{ 
                         echo "your password invalid"; 

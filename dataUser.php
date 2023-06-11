@@ -37,16 +37,16 @@
                             </tr>"; 
                     while ($row=$hasil->fetch_assoc()){ 
                         $teks="<tr>"; 
-                        $teks.="<td>".$row["Id"]."</td>"; 
+                        $teks.="<td>".$row["id"]."</td>"; 
                         $teks.="<td>".$row["nama"]."</td>";
-                        $teks.="<td>".$row["unama"]."</td>";  
+                        $teks.="<td>".$row["username"]."</td>";  
                         $teks.="<td>".$row["email"]."</td>";
                         $teks.="<td>".$row["telepon"]."</td>"; 
                         $teks.="<td>".$row["password"]."</td>"; 
                         $teks.="<td>".$row["jabatan"]."</td>";
                         $teks.="<td>".$row["alamat"]."</td>";  
-                        $teks.="<td><a href='editUser.php?id=".$row["Id"]."'>Edit</a></td>"; 
-                        $teks.="<td><a href='delUser.php?id=".$row["Id"]."'>Hapus</a></td>"; 
+                        $teks.="<td><a href='editUser.php?id=".$row["id"]."'>Edit</a></td>"; 
+                        $teks.="<td><a href='delUser.php?id=".$row["id"]."'>Hapus</a></td>"; 
                         $teks.="</tr>"; 
                         echo $teks; 
                     } 

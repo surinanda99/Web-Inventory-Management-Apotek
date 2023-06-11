@@ -4,7 +4,7 @@
     $sql="SELECT * FROM obat WHERE id='$id'"; 
     $hasil=$conn->query($sql); 
     while($row=$hasil->fetch_assoc()){ 
-        $nama=$row["nama"]; $hrg=$row["hrg"]; $jml=$row["jml"]; $foto=$row["foto"]; 
+        $namaObat=$row["namaObat"]; $harga=$row["harga"]; $stok=$row["stok"]; $foto=$row["foto"]; 
     } 
 ?> 
 <!DOCTYPE html> 
@@ -26,7 +26,7 @@
         <center> 
             <div class="panjang"> 
                 <h1 align="left" style="margin-bottom:30px">Edit Data Barang</h1> 
-                <form action="updBrg.php" method="post" enctype="multipart/form-data"> 
+                <form action="updObat.php" method="post" enctype="multipart/form-data"> 
                     <table class="table table-dark table-hover cols-6 rows-6"> 
                         <tr> 
                             <td>ID</td> 
@@ -47,7 +47,7 @@
                             <td><input type="hidden" name="foto_lama" id="foto_lama" value="<?= $foto; ?>"></td> 
                         </tr> 
                         <tr> 
-                            <td><img src="img1/<?php echo $foto; ?>" width="150px" height="120px"></td> 
+                            <td><img src="img/<?php echo $foto; ?>" width="150px" height="120px"></td> 
                             <td></td> 
                             <td><input type="checkbox" name="ubah_foto" id="ubah_foto" value="true">Ceklis Jika ingin mengubah foto</td> 
                             <td></td> 

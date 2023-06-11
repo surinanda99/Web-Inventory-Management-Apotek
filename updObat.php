@@ -4,7 +4,6 @@
     $id=$_POST['tid']; 
     $namaObat=$_POST['tnama']; 
     $harga=$_POST['thrg']; 
-    $ket=$_POST['tket'];
     $expired=$_POST['dexp'];
     $stok=$_POST['tjml'];     
     $foto_lama=$_POST['foto_lama']; 
@@ -16,7 +15,6 @@
             $sql = "UPDATE obat SET namaObat='$namaObat', 
                                     harga='$harga', 
                                     stok='$stok', 
-                                    keterangan='$ket', 
                                     foto='$foto' WHERE id='$id'"; 
         }else{ 
             $qry=false; 
@@ -31,9 +29,9 @@
     } 
     if($qry==true){ 
         if($conn->query($sql)===TRUE){ 
-            if(is_file("img1/".$foto_lama) && ($flagphoto==TRUE)){ 
+            if(is_file("img/".$foto_lama) && ($flagphoto==TRUE)){ 
                 //jika jambar ada 
-                unlink("img1/".$foto_lama); 
+                unlink("img/".$foto_lama); 
                 $conn->close(); header("location:Halaman1.php"); 
             }else{ 
                 $conn->close(); 

@@ -38,12 +38,12 @@
                         $teks="<tr>"; 
                         $teks.="<td>".$row["id"]."</td>"; 
                         $teks.="<td>".$row["namaObat"]."</td>"; 
-                        $teks.="<td><img src='img1/".$row["foto"]."' style='width: 100px; height: 100px;'></img></td>"; 
+                        $teks.="<td><img src='img/".$row["foto"]."' style='width: 100px; height: 100px;'></img></td>"; 
                         $teks.="<td>".$row["expired"]."</td>"; 
                         $teks.="<td>".$row["harga"]."</td>"; 
-                        $teks.="<td>".$row["stock"]."</td>"; 
-                        $teks.="<td><a href='editBrg.php?id=".$row["id"]."'>Edit</a></td>"; 
-                        $teks.="<td><a href='delBrg.php?id=".$row["id"]."'>Hapus</a></td>"; 
+                        $teks.="<td>".$row["stok"]."</td>"; 
+                        $teks.="<td><a href='editObat.php?id=".$row["id"]."'>Edit</a></td>"; 
+                        $teks.="<td><a href='delObat.php?id=".$row["id"]."'>Hapus</a></td>"; 
                         $teks.="</tr>"; 
                         echo $teks; 
                         } 
@@ -51,13 +51,13 @@
                         echo "<br><table border=1 cellpadding=10 cellspacing=0 align='left'>"; 
                         echo " 
                         <tr> 
-                            <td bgcolor='lighyellow'><a style='text-decoration: none; color:black;' href='addBrg.php''>Tambah</a></td> 
+                            <td bgcolor='lighyellow'><a style='text-decoration: none; color:black;' href='addObat.php''>Tambah</a></td> 
                         </tr>"; 
                         echo "</table>"; 
                 }else{ 
                     echo "Jumlah Record: 0"; 
                     echo "<br><table border=1 cellpadding=10 cellspacing=0 align='left'>"; 
-                    echo " <tr> <td bgcolor='lighyellow'><a style='text-decoration: none; color:black;' href='addBrg.php''>Tambah</a></td> </tr>"; 
+                    echo " <tr> <td bgcolor='lighyellow'><a style='text-decoration: none; color:black;' href='addObat.php''>Tambah</a></td> </tr>"; 
                     echo "</table>"; 
                 } 
                 $conn->close(); 

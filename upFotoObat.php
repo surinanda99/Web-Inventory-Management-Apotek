@@ -1,6 +1,6 @@
 <?php 
     function upload_foto($ft){ 
-        $target_dir = "img1/"; 
+        $target_dir = "img/"; 
         $target_file = $target_dir . basename($ft["name"]); 
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); 

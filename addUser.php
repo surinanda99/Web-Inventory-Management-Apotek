@@ -10,8 +10,7 @@
         $password = htmlspecialchars($_POST['password']); 
         $encryptedpassword = password_hash($password, PASSWORD_DEFAULT); 
         $jabatan = htmlspecialchars($_POST['jabatan']); 
-        $queryinsert = mysqli_query($conn, "INSERT INTO user (nama, alamat, email, telepon, username, password, jabatan) 
-                                            VALUES ('$nama', '$alamat', '$email', '$telepon', '$username', '$encryptedpassword', '$jabatan')"); 
+        $queryinsert = mysqli_query($conn, "INSERT INTO user (nama, alamat, email, telepon, username, password, jabatan) VALUES ('$nama', '$alamat', '$email', '$telepon', '$username', '$encryptedpassword', '$jabatan')"); 
         $sql=mysqli_query($conn, $queryinsert); 
         if($sql){
             header("location:user.php"); 
@@ -36,7 +35,7 @@
             <div class="panjang"> 
                 <h2 align="left" style="margin-bottom:30px">
                     <b>Input user</b>
-                </h2>form action="" method="POST"> 
+                </h2> <form action="" method="POST"> 
                 <div> 
                     <label for="username">Username: </label><br> 
                     <input type="text" name="username"><br> 

@@ -7,7 +7,7 @@ $hasil = $conn->query($sql);
         $foto=$row['foto']; 
     } 
     if($foto != ""){ 
-        unlink("img1/".$foto); 
+        unlink("img/".$foto); 
     } 
     $sql = "DELETE FROM obat WHERE id='$id'"; 
     if($conn->query($sql) === TRUE){

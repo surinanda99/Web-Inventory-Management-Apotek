@@ -64,12 +64,12 @@
                 $count = mysqli_num_rows($query); 
                 
                 if($count > 0){ 
-                    echo "Tidak bisa melakukan registrasi karena username ini sudah terdaftar, silahkan <a href=login1.php>Login</a>"; 
+                    echo "Tidak bisa melakukan registrasi karena username ini sudah terdaftar, silahkan <a href=login.php>Login</a>"; 
                 }else{
                     $queryinsert = mysqli_query($conn, "INSERT INTO user (nama, alamat, email, telepon, username, password, jabatan) 
                     VALUES ('$nama', '$alamat', '$email', '$telepon', '$username', '$encryptedpassword', '$jabatan')"); 
                     if($queryinsert){ 
-                        echo "Anda Sudah Register, Silahkan <a href=login1.php>Login</a>"; 
+                        echo "Anda Sudah Register, Silahkan <a href=login.php>Login</a>"; 
                     } 
                 } 
             } 
