@@ -49,9 +49,9 @@
                     if($data['jabatan']=="admin"||"Admin"){ 
                         header("location:home.php"); 
                     }else if ($data['jabatan']=="karyawan"||"Karyawan"){ 
-                        header("location:home.php"); 
+                        header("location:homeKaryawan.php"); 
                     }else if ($data['jabatan']=="owner"||"Owner"){ 
-                        header("location:home.php"); 
+                        header("location:homeOwner.php"); 
                     }else{ 
                         echo "your password invalid"; 
                     } 
