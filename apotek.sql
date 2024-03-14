@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 08:34 AM
+-- Generation Time: Jun 14, 2023 at 02:59 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.12
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `apotek`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laporan`
+--
+
+CREATE TABLE `laporan` (
+  `id` int(10) NOT NULL,
+  `nama_barang` varchar(100) NOT NULL,
+  `harga` int(100) NOT NULL,
+  `jumlah_terjual` int(100) NOT NULL,
+  `total` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `laporan`
+--
+
+INSERT INTO `laporan` (`id`, `nama_barang`, `harga`, `jumlah_terjual`, `total`) VALUES
+(1, 'Aspirin', 35000, 2, 70000),
+(2, 'paracetamol', 230000, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -48,6 +70,7 @@ CREATE TABLE `transaksi` (
   `jml` int(11) NOT NULL,
   `tglTransaksi` date NOT NULL,
   `totHarga` double NOT NULL,
+  `Keterangan` varchar(255) NOT NULL,
   `bukti` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -73,6 +96,12 @@ CREATE TABLE `user` (
 --
 
 --
+-- Indexes for table `laporan`
+--
+ALTER TABLE `laporan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `obat`
 --
 ALTER TABLE `obat`
@@ -95,10 +124,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `laporan`
+--
+ALTER TABLE `laporan`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

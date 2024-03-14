@@ -1,11 +1,14 @@
 <?php 
-    echo "<br><br><br>"; 
-    include "koneksi.php"; 
-    if(isset($_GET['id'])){ 
-        $kode = $_GET['id']; 
-    }else{ 
-        die ("Error. NO Id Selected! "); 
+include "koneksi.php"; 
+$id=$_GET['id']; 
+$sql = "DELETE FROM user WHERE id='$id'"; 
+    if($conn->query($sql) === TRUE){
+        header("location:dataUser.php"); 
     } 
+<<<<<<< HEAD
+    $conn->close(); 
+    echo "New records failed"; ?>
+=======
 ?> 
 <html>
     <head>
@@ -28,9 +31,10 @@
             }else{ 
                 echo "<h2><font color=red>Data gagal dihapus</font></h2>"; 
             }
-            echo "Klik <a href='user.php'>disini</a> untuk kembali ke halaman display user";
+            echo "Klik <a href='dataUser.php'>disini</a> untuk kembali ke halaman display user";
         }else{
             die ("Access Denied"); 
         } ?> 
     </body> 
 </html>
+>>>>>>> 5139516e321c3d808fa9ee24ecd17437e5ee388b

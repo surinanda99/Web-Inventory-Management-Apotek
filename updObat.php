@@ -13,7 +13,8 @@
         if(upload_foto($_FILES['foto'])){ 
             $foto=$_FILES['foto']['name']; 
             $sql = "UPDATE obat SET namaObat='$namaObat', 
-                                    harga='$harga', 
+                                    harga='$harga',
+                                    expired='$expired', 
                                     stok='$stok', 
                                     foto='$foto' WHERE id='$id'"; 
         }else{ 
@@ -22,9 +23,9 @@
         } 
     }else{ 
         $sql = "UPDATE obat SET namaObat='$namaObat', 
-                                harga='$harga', 
-                                stok='$stok', 
-                                keterangan='$ket' WHERE id='$id'"; 
+                                harga='$harga',
+                                expired='$expired', 
+                                stok='$stok' WHERE id='$id'"; 
         $flagphoto=false; 
     } 
     if($qry==true){ 
@@ -32,10 +33,10 @@
             if(is_file("img/".$foto_lama) && ($flagphoto==TRUE)){ 
                 //jika jambar ada 
                 unlink("img/".$foto_lama); 
-                $conn->close(); header("location:Halaman1.php"); 
+                $conn->close(); header("location:dataObat.php"); 
             }else{ 
                 $conn->close(); 
-                header("location:Halaman1.php"); 
+                header("location:dataObat.php"); 
             } 
         } 
     } 
